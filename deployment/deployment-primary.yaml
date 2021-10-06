@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-app
+spec:
+  selector:
+    matchLabels:
+      app: react-app
+      region: primary
+  template:
+    metadata:
+      labels:
+        app: react-app
+        region: primary
+    spec:
+      containers:
+      - name: react-app
+        image: bradmccoydev/demo:primary
+        env:
+        - name: REACT_APP_REGION
+          value: "AUS"
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
