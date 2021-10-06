@@ -33,7 +33,7 @@ metadata:
 spec:
   selector:
     app: react-app
-    region: primary
+    region: secondary
   ports:
   - port: 80
     targetPort: 80
